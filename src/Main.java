@@ -1,3 +1,4 @@
+// input/output 이 반드시 존재함,
 // 프로그래밍 언어의 프로세스 : 연산, 조건, 반복
 //Pyton의 특징 : [간단] 해야함, JAVA의 특징: [명확] 해야함
 //객체 : 실제를 개념화(Employee) => 특징(속성:이름,입사일,직업)/기능(출근했는가?,점심시간인가?) 의 모음
@@ -7,7 +8,6 @@
 //물리적세계 -> (개념화) -> 객체 : 속성, 기능 -> (코드화) -> 클래스 : 멤버변수, 메서드
 
 //클래스는 멤버변수랑 메서드만 선언이 가능하다
-import p01_class.Animal;
 public class Main {
   //(멤버)변수 선언
   int num1 = 10;
@@ -29,15 +29,5 @@ public class Main {
   public static void main(String[] args) {
     Main main = new Main();
     main.done();
-
-    Animal animal = new Animal();
-    animal.legs = 4;
-    Animal animal2 = new Animal();
-    animal2.legs = 2;
-    System.out.println(animal.legs);
-    System.out.println(animal2.legs);
-    animal.Run();
-    animal2.Run();
-
   }
 }
