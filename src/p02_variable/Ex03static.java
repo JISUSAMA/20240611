@@ -1,6 +1,6 @@
 package p02_variable;
 
-public class Ex03Static {
+public class Ex03static {
   static int vs; int vi;
   private void Foo() {
     System.out.println(vi + vs);
@@ -17,8 +17,8 @@ public class Ex03Static {
 
   //static은 공통의 값을 가지고 instance 값은 각각의 값을 가짐
   public static void main(String[] args) {
-    Ex03Static ex1 = new Ex03Static();
-    Ex03Static ex2 = new Ex03Static();
+    Ex03static ex1 = new Ex03static();
+    Ex03static ex2 = new Ex03static();
     ex1.vi =10;
     System.out.println(ex1.vi);
     ex2.vi =20;
