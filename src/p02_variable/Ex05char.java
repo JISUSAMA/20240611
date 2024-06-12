@@ -22,7 +22,7 @@ public class Ex05char {
     char c3 = '0'; //48
     System.out.println((int)c3);
     Utils.typeOf(new Animal()); //type : Animal
-//    char c4=''; //에러
+    //    char c4=''; //에러
 
     Ex05char ex05char = new Ex05char();
     System.out.println(ex05char.chr); //공백
@@ -32,5 +32,16 @@ public class Ex05char {
     if(ex05char.chr == ' '){
       System.out.println("공백");
     }
+    //    특수문자
+    char c4 ='\''; // '
+    char c5 ='\"'; // "
+    char c6 ='\\'; // \\
+    char c7 ='\b'; // 백스페이스back space
+    char c8 ='\t'; // tab
+    char c9 ='\n'; // 개행
+    char c10 ='\r'; //캐리지 리턴
+    char c11 ='\f'; //폼피드
+
+
   }
 }
