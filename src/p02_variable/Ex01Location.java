@@ -2,7 +2,7 @@ package p02_variable;
 
 public class Ex01Location {
   //변수의 선언 위치 :: 전역, 지역
-  int sum =2; //멤버변수는 전역(global variable)
+  int sum = 2; //멤버변수는 전역(global variable)
   //int sum =1; // 중복 선언되어서 에러 발생, 같은 레벨에서는 동일한 이름 사용할 수 없음
   public void sum(){
     System.out.println("Global_sum :" + sum);
