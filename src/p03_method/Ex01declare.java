@@ -3,6 +3,7 @@ package p03_method;
 import common.Utils;
 
 public class Ex01declare {
+  //메서드의 구조
   //return type : void, primitive,reference (10가지)
   //void ; return 이 없음, primitive,reference : return 을 반드시 해주어야함
   boolean b1;
@@ -84,6 +85,9 @@ public class Ex01declare {
 }
 
 class MyMath {
+  //메서드가 가지는 성격
+  //1) 객체의 속성(상태)을 처리하는 기능
+  //2) 객체의 속성(상태)를 온전(보호)하게 하는 기능
   int sum(int a, int b) {
     return a + b;
   }
@@ -119,5 +123,9 @@ class MyMath {
   public static void shareRemain(int a, int b) {
     System.out.println("ShareRemain(Share) : " + share(a, b));
     System.out.println("ShareRemain(Remain) :" + remain(a, b));
+    System.out.printf("몫 : %d , 나머지 : %d \n", share(a, b), remain(a, b));
+    System.out.println(String.format("(string.format) 몫 : %d , 나머지 : %d ", share(a, b), remain(a, b)));
+    Utils.typeOf(String.format("(string.format) 몫 : %d , 나머지 : %d ", share(a, b), remain(a, b)));
   }
+
 }

@@ -3,6 +3,9 @@ package p01_class;
 public class Ex02printf {
   public static void main(String[] args) {
     System.out.println("저 산자락에 긴 노을지면 \n 걸음걸음도 살며시 달님이  \t 오시네");
+    System.out.println(7+7+"7"+7+7);
+    System.out.println(7+7+"7"+(7+7));
+
     System.out.print("저 산자락에 긴 노을지면");
     System.out.print("걸음걸음도 살며시 달님이 \t 오시네 ");
     System.out.print("밤 달빛에도 참 어여뻐라");
