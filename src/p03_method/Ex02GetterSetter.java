@@ -7,7 +7,7 @@ public class Ex02GetterSetter {
     //p1.id = "admin";
     //p1.pass = "1234";
     //p1.pass = "1111";
-    System.out.println(p1.GetName("admin"));
+    System.out.println(p1.getName("admin"));
   }
 }
 
@@ -19,7 +19,7 @@ class Person {
   private String pass;
   private String moblie;
 
-  public String GetName(String name) {
+  public String getName(String name) {
     return name;
   }
 }
