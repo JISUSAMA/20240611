@@ -1,5 +1,4 @@
 package p02_variable;
-
 import common.Utils;
 
 public class Ex06int {
@@ -35,5 +34,10 @@ public class Ex06int {
 
     //int i2 = l2;
     int i2 = (int)l2; //int < long , 명시적으로 작성해야함
+    long  result = i2 +l1;
+    Utils.typeOf(result); //long 자료형과 연산을 할 경우, Long 타입으로 형변환
+
+    int i3 = b1; //int = byte :: 묵시적 형변환(int 표현범위가 큼)
+    byte b5 = (byte)i3; //byte = int :: 명시적 형변환
   }
 }

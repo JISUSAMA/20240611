@@ -30,7 +30,7 @@ public class Ex02Types {
 
   public static void main(String[] args) {
 
-    //변수의 종류: Primitive - 일반 변수, Reference - 참조 변수
+    //변수의 종류: Primitive - 일반(기본) 변수, Reference - 참조 변수
     //Primitive type ( 일반 변수는 실제 값을 가짐 )
     boolean power = true; //논리형 true, false 1byte(8bit)
     char c1 = 'A';  // 문자형, 2byte, 0 ~ 65535 ->Char는 오로지 한글자만 입력가능

@@ -12,7 +12,7 @@ public class Ex05char {
     System.out.println("(int)c1: "+(int)c1);
     System.out.println("형변환1: "+ c1+(int)c1);
     Utils.typeOf("형변환1 :" + c1+(int)c1);
-    System.out.println("형변환2: "+ (c1+c1)); //연산할 경우,int로 형변환
+    System.out.println("형변환2: "+ (c1+c1)); //연산할 경우,int로 형변환하고 연산함
     Utils.typeOf(c1+c1);
     System.out.println("형변환3: "+ (c1+(int)c1));
     System.out.println(c1+(int)c1);
@@ -36,12 +36,12 @@ public class Ex05char {
     char c4 ='\''; // '
     char c5 ='\"'; // "
     char c6 ='\\'; // \\
-    char c7 ='\b'; // 백스페이스back space
+    char c7 ='\b'; // 백스페이스 backSpace
     char c8 ='\t'; // tab
     char c9 ='\n'; // 개행
     char c10 ='\r'; //캐리지 리턴
     char c11 ='\f'; //폼피드
-
-
+    char c12 ='\u0000'; //공백의 헥사값
+   c12 =' '; //기본값, 공백
   }
 }
