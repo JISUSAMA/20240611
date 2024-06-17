@@ -28,7 +28,7 @@ public class Ex01declare {
   }
 
   double print5() {
-    System.out.println("double");
+    System.out.println("print5");
     return 10; //return 이후의 문장은 효용 없음.
 //    System.out.println("double");
 
