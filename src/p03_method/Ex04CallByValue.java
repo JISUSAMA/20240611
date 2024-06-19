@@ -13,6 +13,7 @@ public class Ex04CallByValue {
     change(500); //18번 라인 호출
     change(d); //data 라는 참조형 변수를 넘겨줌 /22번 라인 호출
     change(d.value); //data 변수 값을 넘겨줌 /18번 라인 호출
+    change((int)1.12f); //기본형 타입의 명시적 형변환
     System.out.println(d.value);
   }
   //값을 받는것
