@@ -22,24 +22,36 @@ public class Ex10while {
       j++;
       System.out.println();
     }
-    System.out.println("내 마음의 숫자를 맞춰봐 (1~100)");
-    int random  = (int)(Math.random()*100)+1;
-    int count = 0;
-    System.out.println(random);
-    while(true){
-      int answer =Integer.parseInt(JOptionPane.showInputDialog("숫자를 입력하세요! (1~100)"));
-      if(random == answer){
-        System.out.printf("정답 입니다! 정답은 %d 시도 횟수 : %d\n",answer,count);
-        break;
+  /*
+    System.out.println("=======내 마음의 숫자를 맞추기 게임=======");
+    boolean stop = false;
+    while (true) {
+      int random = (int) (Math.random() * 100) + 1;
+      if (stop) break;
+      while (true) {
+        String input = JOptionPane.showInputDialog("숫자를 입력하세요(종료하려면 Q,q)");
+        if (input.toLowerCase().equals("q")) {
+          stop = true;
+          break;
+        } else {
+          int answer = Integer.parseInt(input);
+          if (answer > random) {
+            System.out.printf("%d 보다 작습니다.\n", answer);
+          } else if (answer < random) {
+            System.out.printf("%d 보다 큽니다.\n", answer);
+          } else {
+            System.out.println("정답입니다.");
+          }
+        }
       }
-      else if(random > answer){
-        count++;
-        System.out.printf("%d 보다 값이 큽니다! 시도 횟수 : %d\n",answer,count);
-      }
-      else if(random < answer){
-        count++;
-        System.out.printf("%d 보다 값이 작습니다! 시도 횟수 : %d\n",answer,count);
-      }
+   }*/
+
+    //do~while
+    //
+    do {
+
     }
+    while (true);
+
   }
 }
