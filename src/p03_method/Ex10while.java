@@ -49,9 +49,15 @@ public class Ex10while {
     //do~while
     //
     do {
-
-    }
-    while (true);
-
+      //int you =
+      String input = JOptionPane.showInputDialog("가위(0), 바위(1), 보(2) 중에 입력하세요!");
+      int me = 3;
+      try {
+        me = Integer.parseInt(input);
+      } catch (Exception e) {
+        //Exception 이 발생하면 무조건 처음으로 돌아감
+        continue; // 반복문 처음으로 돌아감
+      }
+    } while(true);
   }
 }
