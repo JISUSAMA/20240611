@@ -55,17 +55,26 @@ abstract class Terran extends Unit {
     //첫줄에 " super() = 부모를 가리킴 "가 숨어있음
     super("Terran",uName,hp); //Unit을 가리키고 있음
   }
+  public void Shild(){
+
+  }
+}
+abstract class Shild{
+
 }
 class Marin extends Terran {
   public Marin() {
     super("Marin",60);
+
   }
 }
 class Medic extends Terran {
   public Medic() {
     super("Medic",45);
+
   }
 }
+
 abstract class Protoss extends Unit{
   //String tribe,String uName, int hp
   public Protoss(String uName,int hp){
