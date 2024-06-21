@@ -1,6 +1,6 @@
 package p05_Inherit;
 
-public class Ex03extentds {
+public class Ex03extends {
   public static void main(String[] args) {
     Marin m1 = new Marin();
     System.out.println(m1);
@@ -19,7 +19,6 @@ abstract class Unit {
   int hp;
   String tribe;
 
-
   @Override
   public String toString() {
     return String.format("Unit{hp=%d , tribe = %s}", hp,tribe) ;
@@ -28,7 +27,8 @@ abstract class Unit {
   public void mov(int x, int y) {
   }
 
-  public void stop() {
+  public void stop()
+  {
   }
 }
 
@@ -38,9 +38,7 @@ abstract class Terran extends Unit {
     //첫줄에 " super() = 부모를 가리킴 "가 숨어있음
     super("Terran",hp); //Unit을 가리키고 있음
   }
-
 }
-
 class Marin extends Terran {
   public Marin() {
     super(60);
