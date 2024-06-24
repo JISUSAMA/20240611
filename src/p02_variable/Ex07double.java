@@ -1,6 +1,6 @@
 package p02_variable;
 
-import common.Utils;
+import p05_Inherit.common.Utils;
 
 public class Ex07double {
   //정수형(int, long)의 대표는 int

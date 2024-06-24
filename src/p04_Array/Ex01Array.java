@@ -1,7 +1,6 @@
 package p04_Array;
 
-import common.Utils;
-import jdk.jshell.execution.Util;
+import p05_Inherit.common.Utils;
 
 public class Ex01Array {
   public static void main(String[] args) {

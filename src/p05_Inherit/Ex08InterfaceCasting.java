@@ -1,8 +1,6 @@
 package p05_Inherit;
 
-import common.Utils;
-
-import java.util.Objects;
+import p05_Inherit.common.Utils;
 
 public class Ex08InterfaceCasting {
   public static void main(String[] args) {

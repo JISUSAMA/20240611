@@ -1,4 +1,4 @@
-package common;
+package p05_Inherit.common;
 
 public class Utils {
   public static void typeOf(Object obj) {

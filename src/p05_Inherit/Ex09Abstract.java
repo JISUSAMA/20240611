@@ -24,21 +24,21 @@ abstract class Abstract {
 }
 interface Interface {
 }
-class MyFrame extends JFrame {
-  public MyFrame() throws HeadlessException {
-    setSize(300, 200);
-    setTitle("My Window");
-    setDefaultCloseOperation(EXIT_ON_CLOSE);
-    setLocationRelativeTo(null);
-    setLayout(new FlowLayout());
-    JButton jButton = new JButton("확인");
-    jButton.addActionListener(new ActionListener() {
-      @Override
-      public void actionPerformed(ActionEvent e) {
-        System.out.println("Hello");
-      }
-    });
-    add(jButton);
-    setVisible(true);
-  }
-}
+//class MyFrame extends JFrame {
+//  public MyFrame() throws HeadlessException {
+//    setSize(300, 200);
+//    setTitle("My Window");
+//    setDefaultCloseOperation(EXIT_ON_CLOSE);
+//    setLocationRelativeTo(null);
+//    setLayout(new FlowLayout());
+//    JButton jButton = new JButton("확인");
+//    jButton.addActionListener(new ActionListener() {
+//      @Override
+//      public void actionPerformed(ActionEvent e) {
+//        System.out.println("Hello");
+//      }
+//    });
+//    add(jButton);
+//    setVisible(true);
+//  }
+//}

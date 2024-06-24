@@ -1,6 +1,6 @@
 package p03_method;
 
-import common.Utils;
+import p05_Inherit.common.Utils;
 
 public class Ex01declare {
   //메서드의 구조

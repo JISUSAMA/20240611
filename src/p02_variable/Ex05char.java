@@ -1,6 +1,6 @@
 package p02_variable;
 
-import common.Utils;
+import p05_Inherit.common.Utils;
 import p01_class.Animal;
 
 public class Ex05char {

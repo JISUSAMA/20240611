@@ -1,5 +1,5 @@
 package p02_variable;
-import common.Utils;
+import p05_Inherit.common.Utils;
 
 public class Ex06int {
   public static void main(String[] args) {
