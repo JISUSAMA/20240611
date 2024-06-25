@@ -11,10 +11,14 @@ public class Ex13trycatch {
     } catch (Exception e) {
       //throw new RuntimeException(e);
       System.out.println("예외 발생");
+    }finally {
+      System.out.println(5);
     }
-    System.out.println(5);
     System.out.println(6);
     System.out.println(7);
     System.out.println(8);
+
+    //tryWithResource 문은 입출력에서 다룰 것
+
   }
 }

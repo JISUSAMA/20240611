@@ -23,6 +23,12 @@ public class Ex03extends {
 //abstract 추상적인 클래스
 
 abstract class Unit {
+  public Unit(){
+    //this(), super()는 항상위(맨첫줄)에 있어야 하기 떄문에 두개를 동시에 사용이 불가능하다
+    super();
+    //this("","",15);
+    System.out.println("야생 동물 생성");
+  }
   public Unit(String tribe,String uName, int hp){
     super();
     this.tribe = tribe;

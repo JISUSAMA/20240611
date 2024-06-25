@@ -8,7 +8,13 @@ public class Ex12Inner {
     //static
     Outer.InnerStatic ois = new Outer.InnerStatic();
     System.out.println(ois.isv);
-    Outer.InnerInterface oii = new Outer.InnerInterface(){};
+    Outer.InnerInterface oii = new Outer.InnerInterface(){
+      @Override
+      public void innerMethod() {
+
+      }
+    };
+    System.out.println(oii);
   }
 }
 
@@ -26,8 +32,8 @@ class Outer {
   static class InnerStatic {
     int isv = 200;
   }
-  interface  InnerInterface{
-
+  interface InnerInterface {
+    void innerMethod();
   }
 }
 
