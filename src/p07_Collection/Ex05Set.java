@@ -1,5 +1,7 @@
 package p07_Collection;
 
+import com.sun.security.jgss.GSSUtil;
+
 import java.util.*;
 
 public class Ex05Set {
@@ -28,6 +30,12 @@ public class Ex05Set {
     ArrayList list3 = new ArrayList(lotto2);
     Collections.sort(list3);
     System.out.println(list3);
+
+    Set<Integer> lotto3 = new TreeSet<>();
+    while (lotto2.size() <6 ){
+      lotto2.add((int)(Math.random()*45)+1);
+    }
+    System.out.println(lotto3);
   }
 }
 
