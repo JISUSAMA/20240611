@@ -1,9 +1,6 @@
 package p07_Collection;
 
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Random;
-import java.util.Set;
+import java.util.*;
 
 public class Ex05Set {
   public static void main(String[] args) {
@@ -28,7 +25,9 @@ public class Ex05Set {
     while(lotto2.size()<6){
       lotto2.add((int)(Math.random()*45)+1);
     }
-
+    ArrayList list3 = new ArrayList(lotto2);
+    Collections.sort(list3);
+    System.out.println(list3);
   }
 }
 
