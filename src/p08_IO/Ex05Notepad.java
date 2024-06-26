@@ -60,6 +60,12 @@ class Notepad extends JFrame {
         if(ret == 0){
           try {
             FileReader fr = new FileReader(fc.getSelectedFile().toString());
+            int data;
+            textArea.setText("");
+            while ((data=fr.read())!=-1){
+              textArea.append(String.valueOf((char)data));
+            }
+            fr.close();
           } catch (FileNotFoundException ex) {
             throw new RuntimeException(ex);
           }
