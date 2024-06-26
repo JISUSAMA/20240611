@@ -31,6 +31,7 @@ public class Ex05Set {
     Collections.sort(list3);
     System.out.println(list3);
 
+    //정렬이 되어서 나옴
     Set<Integer> lotto3 = new TreeSet<>();
     while (lotto2.size() <6 ){
       lotto2.add((int)(Math.random()*45)+1);
