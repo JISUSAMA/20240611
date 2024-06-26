@@ -72,8 +72,7 @@ class Notepad extends JFrame {
         }
       }
     });
-    //저장
-
+    //저장 숙제:저장하는 파일 가져오기
   }
 
   //배치
