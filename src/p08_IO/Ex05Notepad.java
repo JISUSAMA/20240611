@@ -4,18 +4,20 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 
 public class Ex05Notepad {
   public static void main(String[] args) {
- new Notepad();
+    new Notepad();
   }
 }
 
 class Notepad extends JFrame {
   private JMenuBar menuBar;
   private JMenu menuF, menuE, menuO, menuV, menuH;
-  private JMenuItem miNew, miOpen, miSave,miExit, miInfo;
-  private  JTextArea textArea;
+  private JMenuItem miNew, miOpen, miSave, miExit, miInfo;
+  private JTextArea textArea;
   private JScrollPane scp;
   private JFileChooser fc;
 
@@ -28,8 +30,10 @@ class Notepad extends JFrame {
   //window의 구성품을 초기화
   private void init() {
     menuBar = new JMenuBar();
-    menuF = new JMenu("파일(F)"); menuE = new JMenu("편집(E)");
-    menuO = new JMenu("서식(O)"); menuV = new JMenu("보기(V)");
+    menuF = new JMenu("파일(F)");
+    menuE = new JMenu("편집(E)");
+    menuO = new JMenu("서식(O)");
+    menuV = new JMenu("보기(V)");
     menuH = new JMenu("도움말(H)");
     miNew = new JMenuItem("새로만들기(N)");
     miOpen = new JMenuItem("열기(O)");
@@ -39,6 +43,8 @@ class Notepad extends JFrame {
 
     textArea = new JTextArea();
     scp = new JScrollPane(textArea);
+    fc = new JFileChooser();
+
     miNew.addActionListener(new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent e) {
@@ -47,10 +53,23 @@ class Notepad extends JFrame {
       }
     });
     //열기
-
+    miOpen.addActionListener(new ActionListener() {
+      @Override
+      public void actionPerformed(ActionEvent e) {
+        int ret = fc.showOpenDialog(miOpen);
+        if(ret == 0){
+          try {
+            FileReader fr = new FileReader(fc.getSelectedFile().toString());
+          } catch (FileNotFoundException ex) {
+            throw new RuntimeException(ex);
+          }
+        }
+      }
+    });
     //저장
 
   }
+
   //배치
   private void arrange() {
     menuF.add(miNew);
@@ -68,13 +87,14 @@ class Notepad extends JFrame {
     //JFram에 의해서 사용가능
     add(scp);
   }
+
   //나타나게 함
   private void inflate() {
-  setTitle("나의 메모장");
-  setSize(500,300);
-  setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-  setLocationRelativeTo(this);
-  setVisible(true);
+    setTitle("나의 메모장");
+    setSize(500, 300);
+    setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    setLocationRelativeTo(this);
+    setVisible(true);
   }
 
 }
