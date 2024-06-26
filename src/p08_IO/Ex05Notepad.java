@@ -17,6 +17,7 @@ class Notepad extends JFrame {
   private JMenuItem miNew, miOpen, miSave,miExit, miInfo;
   private  JTextArea textArea;
   private JScrollPane scp;
+  private JFileChooser fc;
 
   public Notepad() throws HeadlessException {
     init();
@@ -41,9 +42,14 @@ class Notepad extends JFrame {
     miNew.addActionListener(new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent e) {
+        textArea.setText(""); //새로 만들었을 때, 글 지우기
         System.out.println("널위해 만들었어!!😊");
       }
     });
+    //열기
+
+    //저장
+
   }
   //배치
   private void arrange() {
