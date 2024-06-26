@@ -4,8 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
+import java.io.*;
 
 public class Ex05Notepad {
   public static void main(String[] args) {
@@ -57,22 +56,38 @@ class Notepad extends JFrame {
       @Override
       public void actionPerformed(ActionEvent e) {
         int ret = fc.showOpenDialog(miOpen);
-        if(ret == 0){
+        if (ret == 0) {
           try {
             FileReader fr = new FileReader(fc.getSelectedFile().toString());
             int data;
             textArea.setText("");
-            while ((data=fr.read())!=-1){
-              textArea.append(String.valueOf((char)data));
+            while ((data = fr.read()) != -1) {
+              textArea.append(String.valueOf((char) data));
             }
             fr.close();
           } catch (FileNotFoundException ex) {
+            throw new RuntimeException(ex);
+          } catch (IOException ex) {
             throw new RuntimeException(ex);
           }
         }
       }
     });
-    //저장 숙제:저장하는 파일 가져오기
+    //파일 저장하기
+    miSave.addActionListener(new ActionListener() {
+      @Override
+      public void actionPerformed(ActionEvent e) {
+        int ret = fc.showSaveDialog(miSave);
+        if (ret == 0) {
+          File selectedFile = fc.getSelectedFile();
+          try (FileWriter writer = new FileWriter(selectedFile)) {
+            writer.write(textArea.getText());
+          } catch (IOException ex) {
+            ex.printStackTrace();
+          }
+        }
+      }
+    });
   }
 
   //배치

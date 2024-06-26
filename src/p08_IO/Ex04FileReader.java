@@ -13,7 +13,6 @@ public class Ex04FileReader {
       FileReader fr = new FileReader(fileName);
 
       int data = 0;
-
       while ((data = fis.read()) != -1) System.out.print((char) data);
       System.out.println();
       fis.close();
