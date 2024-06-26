@@ -41,7 +41,7 @@ class Notepad extends JFrame {
     miNew.addActionListener(new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent e) {
-        System.out.println("널위해 만들었어!😊");
+        System.out.println("널위해 만들었어!!😊");
       }
     });
   }
