@@ -34,7 +34,6 @@ public class Ex09MapApplicate {
   private static void printBook(Map map) {
     System.out.println(map);
     Iterator it = phoneBook.keySet().iterator();
-    System.out.println(it);
     while (it.hasNext()){
       String group = (String)it.next();
       HashMap book = (HashMap) phoneBook.get(group);
@@ -43,20 +42,11 @@ public class Ex09MapApplicate {
       while (subIt.hasNext()){
          Map.Entry entry = (Map.Entry)subIt.next();
         //Utils.typeOf(entry);
-        System.out.printf("[ %s ] [ %s ]\n",entry.getKey(), entry.getValue());
+        System.out.printf("[ %s ] %s \n",entry.getKey(), entry.getValue());
       }
     }
 
   }
 
 }
-/* 숙제
-친구 4개
-김수한 1110
-둘 1112
-셋 1113
-넷 1114
-기타 1개
-마트 1114
-*/
 
