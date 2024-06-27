@@ -82,14 +82,19 @@ class Notepad extends JFrame {
           try {
             String selectedFile = fc.getSelectedFile().toString();
             FileWriter fw = new FileWriter(selectedFile);
+            //보조스트림 , 입출력에 대한 뭐시기???
             BufferedWriter bw = new BufferedWriter(fw);
             bw.write(textArea.getText());
-            bw.close(); fw.close();
+            bw.close();
+            fw.close();
           } catch (IOException ex) {
             ex.printStackTrace();
           }
         }
       }
+    });
+    miInfo.addActionListener(e -> {
+      new InfoDialog(this, true);
     });
   }
 
@@ -120,4 +125,18 @@ class Notepad extends JFrame {
     setVisible(true);
   }
 
+}
+
+class InfoDialog extends JDialog {
+  public InfoDialog(JFrame fr, boolean modal) {
+    super(fr, modal);
+    JPanel pnl = new JPanel();
+    JLabel label = new JLabel("널 위해 만들었어!");
+    pnl.add(label);
+    add(pnl, "Center");
+    setTitle("정보");
+    setSize(200, 100);
+    setLocationRelativeTo(this);
+    setVisible(true);
+  }
 }
