@@ -16,7 +16,7 @@ public class Ex01Thread {
     bomb.choice(input);
   }
 }
-
+//Thread 를 생성하는 방법 : 1)Thread를 상속 2) Runnable을 implement
 class Bomb extends Thread {
   int answer = (int) (Math.random() * 2);
   boolean state_b = false;

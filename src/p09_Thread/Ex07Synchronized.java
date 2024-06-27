@@ -4,6 +4,9 @@ public class Ex07Synchronized {
 
   public static void main(String[] args) {
     Customer customer = new Customer();
+    //인터페이스는 재정의한 메서드만 가져와서 사용할 수 있다
+    //즉, customer 안에이있는 run() 만 사용함
+    new Thread(customer).start();
     new Thread(customer).start();
   }
 }
@@ -15,7 +18,7 @@ class Account {
     return balance;
   }
 
-  public void withdraw(int money) {
+  synchronized public void withdraw(int money) {
     if (balance >= money) {
       try {
         Thread.sleep(300);
