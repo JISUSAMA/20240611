@@ -59,6 +59,7 @@ public class Ex01TcpIpMultiChatClient extends JFrame {
       public void actionPerformed(ActionEvent e) {
         try {
           out.writeUTF(nickname+":"+tf.getText());
+          tf.setText("");
         } catch (IOException ex) {
           throw new RuntimeException(ex);
         }
@@ -94,7 +95,7 @@ public class Ex01TcpIpMultiChatClient extends JFrame {
       while (in != null){
         try {
           //과제(수정) 프로그램안에서 띄우기
-          ta.setText(in.readUTF());
+          ta.append(in.readUTF()+"\n");
         } catch (IOException e) {
           throw new RuntimeException(e);
         }
