@@ -1,5 +1,7 @@
 package P11_network;
 
+import p05_Inherit.common.Utils;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -11,6 +13,8 @@ import java.net.Socket;
 
 //1. 입력후 글자 지워짐
 //2. 외부메세지를 textArea 에 보이게하기
+//3. 스롤내려가게 만들기
+//4. 메세지 공백 안보내지게
 
 public class Ex01TcpIpMultiChatClient extends JFrame {
 
@@ -58,8 +62,11 @@ public class Ex01TcpIpMultiChatClient extends JFrame {
       @Override
       public void actionPerformed(ActionEvent e) {
         try {
-          out.writeUTF(nickname+":"+tf.getText());
-          tf.setText("");
+          if(!tf.getText().equals("")){
+            System.out.println("입력됨!"+tf.getText());
+            out.writeUTF(nickname+":"+tf.getText());
+            tf.setText("");
+          }
         } catch (IOException ex) {
           throw new RuntimeException(ex);
         }
