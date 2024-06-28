@@ -1,6 +1,4 @@
-package P11_network;
-
-import p05_Inherit.common.Utils;
+package p11_network;
 
 import javax.swing.*;
 import java.awt.*;
@@ -36,7 +34,8 @@ public class Ex01TcpIpMultiChatClient extends JFrame {
 
   private void init() {
     nickname = JOptionPane.showInputDialog("Input Nickname");
-    String ip = JOptionPane.showInputDialog("Server IP", "10.100.204.26");
+    //10.100.204.26
+    String ip = JOptionPane.showInputDialog("Server IP", "119.198.179.248");
 
     ta = new JTextArea();
     ta.setEditable(false); //텍스트 수정 가능 여부
@@ -66,6 +65,11 @@ public class Ex01TcpIpMultiChatClient extends JFrame {
             System.out.println("입력됨!"+tf.getText());
             out.writeUTF(nickname+":"+tf.getText());
             tf.setText("");
+            scp.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+
+            JScrollBar verticalBar = scp.getVerticalScrollBar();
+            verticalBar.setValue(verticalBar.getMaximum());
+
           }
         } catch (IOException ex) {
           throw new RuntimeException(ex);
@@ -96,7 +100,6 @@ public class Ex01TcpIpMultiChatClient extends JFrame {
         throw new RuntimeException(e);
       }
     }
-
     @Override
     public void run() {
       while (in != null){
