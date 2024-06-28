@@ -65,7 +65,6 @@ public class Ex01TcpIpMultiChatClient extends JFrame {
       }
     });
   }
-
   private void arrange() {
     add(scp, "Center");
     add(tf, "South");
