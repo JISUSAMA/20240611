@@ -1,7 +1,6 @@
-package p09_Thread;
+package p10_Thread;
 
 import javax.swing.*;
-import java.util.Random;
 
 public class Ex01Thread {
   public static void main(String[] args) {
