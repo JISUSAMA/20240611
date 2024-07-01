@@ -1,4 +1,4 @@
-package p12_database;
+package p12_database.dao;
 
 import java.sql.*;
 
@@ -21,6 +21,7 @@ public class DAOSet {
       if (stmt != null) stmt.close();
       if (pstmt != null) pstmt.close();
       if (conn != null) conn.close();
+      System.out.println(conn.isClosed()?"접속종료":"접속중");
     } catch (SQLException e) {
       throw new RuntimeException(e);
     }

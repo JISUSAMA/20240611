@@ -1,4 +1,4 @@
-package p12_database;
+package p12_database.dao;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -14,6 +14,9 @@ public class DAOSetTest {
       System.out.println("드라이버로딩 오류: "+e.getMessage());
     } catch (SQLException e) {
       System.out.println("접속 오류: "+e.getMessage());
+    }
+    finally {
+      daoSet.closeDB();
     }
   }
 }
