@@ -8,13 +8,16 @@ public class Ex02TcpIpMultichatServer {
   public static void main(String args[]) {
     new Ex02TcpIpMultichatServer().start();
   }
+
   HashMap clients;
 
+  //동기화
   Ex02TcpIpMultichatServer() {
     clients = new HashMap();
     Collections.synchronizedMap(clients);
   }
 
+  //서버는 서버 소켓이 있어야함, 클라이언트는 소켓만 있어도 가능
   public void start() {
     ServerSocket serverSocket = null;
     Socket socket = null;
@@ -22,14 +25,14 @@ public class Ex02TcpIpMultichatServer {
     try {
       serverSocket = new ServerSocket(7777);
       System.out.println("Server started...");
-
-      while(true) {
+      //서버는 무한적으로 돌아가야한다
+      while (true) {
         socket = serverSocket.accept();
-        System.out.println("Connected from ["+socket.getInetAddress() + ":"+socket.getPort()+"]");
+        System.out.println("Connected from [" + socket.getInetAddress() + ":" + socket.getPort() + "]");
         ServerReceiver thread = new ServerReceiver(socket);
         thread.start();
       }
-    } catch(Exception e) {
+    } catch (Exception e) {
       e.printStackTrace();
     }
   } // start()
@@ -37,11 +40,12 @@ public class Ex02TcpIpMultichatServer {
   void sendToAll(String msg) {
     Iterator it = clients.keySet().iterator();
 
-    while(it.hasNext()) {
+    while (it.hasNext()) {
       try {
-        DataOutputStream out = (DataOutputStream)clients.get(it.next());
+        DataOutputStream out = (DataOutputStream) clients.get(it.next());
         out.writeUTF(msg);
-      } catch(IOException e){}
+      } catch (IOException e) {
+      }
     } // while
   } // sendToAll
 
@@ -56,27 +60,28 @@ public class Ex02TcpIpMultichatServer {
       try {
         in = new DataInputStream(socket.getInputStream());
         out = new DataOutputStream(socket.getOutputStream());
-      } catch(IOException e) {}
+      } catch (IOException e) {
+      }
     }
 
     public void run() {
       String name = "";
       try {
         name = in.readUTF();
-        sendToAll("#"+name+" 님이 입장하셨습니다.");
+        sendToAll("#" + name + " 님이 입장하셨습니다.");
 
         clients.put(name, out);
-        System.out.println("Now Number of Connector is " + clients.size());
-        while(in!=null) {
+        System.out.println("현재 접속자 수: " + clients.size());
+        while (in != null) {
           sendToAll(in.readUTF());
         }
-      } catch(IOException e) {
+      } catch (IOException e) {
         // ignore
       } finally {
-        sendToAll("#"+name+" is disconnected");
+        sendToAll("#" + name + " is disconnected");
         clients.remove(name);
-        System.out.println("Terminated from ["+socket.getInetAddress()+":"+socket.getPort()+"]");
-        System.out.println("Now Number of Connector is " + clients.size());
+        System.out.println("Terminated from [" + socket.getInetAddress() + ":" + socket.getPort() + "]");
+        System.out.println("현재 접속자 수: " + clients.size());
       } // try
     } // run
   } // ReceiverThread

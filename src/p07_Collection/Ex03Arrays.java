@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.IntUnaryOperator;
 
+// Arrays : Collection에 배열을 다루기 위해 추가된 클래스
 public class Ex03Arrays {
   public static void main(String[] args) {
     int[]arr ={0,1,2,3,4};
@@ -41,7 +42,8 @@ public class Ex03Arrays {
     List<Integer> list = new ArrayList<>(Arrays.asList(arrInt1));
 
     //list를 배열로
-    Integer [] arrInt2 = list.toArray(new Integer[arrInt1.length]);
+    //Integer [] arrInt2 = list.toArray(new Integer[arrInt1.length]);
+    Integer[] arrInt2 = list.toArray(new Integer[0]);
     System.out.println(Arrays.toString(arrInt2));
 
     Integer[]arrInt3 = list.stream().toArray(value -> new Integer[value]);

@@ -35,7 +35,7 @@ public class Ex01TcpIpMultiChatClient extends JFrame {
   private void init() {
     nickname = JOptionPane.showInputDialog("Input Nickname");
     //10.100.204.26
-    String ip = JOptionPane.showInputDialog("Server IP", "119.198.179.248");
+    String ip = JOptionPane.showInputDialog("Server IP", "10.100.204.26");
 
     ta = new JTextArea();
     ta.setEditable(false); //텍스트 수정 가능 여부
@@ -61,7 +61,8 @@ public class Ex01TcpIpMultiChatClient extends JFrame {
       @Override
       public void actionPerformed(ActionEvent e) {
         try {
-          if(!tf.getText().equals("")){
+          String sendMSG = tf.getText();
+          if(!sendMSG.equals("")){
             System.out.println("입력됨!"+tf.getText());
             out.writeUTF(nickname+":"+tf.getText());
             tf.setText("");
@@ -69,7 +70,6 @@ public class Ex01TcpIpMultiChatClient extends JFrame {
 
             JScrollBar verticalBar = scp.getVerticalScrollBar();
             verticalBar.setValue(verticalBar.getMaximum());
-
           }
         } catch (IOException ex) {
           throw new RuntimeException(ex);
@@ -104,8 +104,10 @@ public class Ex01TcpIpMultiChatClient extends JFrame {
     public void run() {
       while (in != null){
         try {
+          String msg = in.readUTF();
           //과제(수정) 프로그램안에서 띄우기
-          ta.append(in.readUTF()+"\n");
+          ta.append(msg+"\n");
+          ta.setCaretPosition(ta.getDocument().getLength());
         } catch (IOException e) {
           throw new RuntimeException(e);
         }
