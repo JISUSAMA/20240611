@@ -25,8 +25,8 @@ public class Ex10Generics {
     Card[] cards = list.toArray(new IntFunction<Card[]>() { //Java 11 이후
       @Override
       public Card[] apply(int value) {
-        //배열을 가리키는 참조변수는 null대신 길이가 0인 배열로 초기화
         System.out.println(">>"+value); //0인 이유:
+        //배열의 길이가 0인 이유는 배열을 참조하기 위함.(null로 초기화하기도 함.)
         return new Card[value];
       }
     });
